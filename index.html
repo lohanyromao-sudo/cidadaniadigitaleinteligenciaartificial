@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadania Digital & IA</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #2563eb;
+            --accent: #06b6d4;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --bg-card: rgba(30, 41, 59, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header e Navegação */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem 2rem;
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.2), transparent),
+                        radial-gradient(circle at bottom left, rgba(6, 182, 212, 0.15), transparent);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Seções de Conteúdo */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 0.5rem auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Grid de Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2.5rem;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #090d16;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplificado para focar no código limpo */
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">EducaDigital.ia</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#pilares">Cidadania Digital</a></li>
+                <li><a href="#ia-etica">IA Ética</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Navegando no Futuro: <br><span>Cidadania Digital & IA</span></h1>
+            <p>Compreender os direitos, deveres e o impacto da inteligência artificial é o primeiro passo para construir uma sociedade conectada mais justa, ética e segura.</p>
+            <a href="#pilares" class="btn">Explorar Conteúdo</a>
+        </div>
+    </section>
+
+    <section id="pilares" class="section">
+        <h2 class="section-title">Pilares da Cidadania Digital</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>01. Pegada Digital</h3>
+                <p>Tudo o que postamos, curtimos e pesquisamos deixa rastros. Desenvolver a consciência sobre nossa identidade digital protege nossa privacidade e reputação futura.</p>
+            </div>
+            <div class="card">
+                <h3>02. Pensamento Crítico</h3>
+                <p>Saber diferenciar fatos de opiniões e desinformação (*fake news*). No ecossistema digital, validar as fontes de informação é um dever cívico.</p>
+            </div>
+            <div class="card">
+                <h3>03. Respeito e Empatia</h3>
+                <p>A cultura digital exige o combate ao cyberbullying e ao discurso de ódio. O espaço virtual deve ser um ambiente de debate saudável e inclusivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ia-etica" class="section" style="background: rgba(30, 41, 59, 0.2);">
+        <h2 class="section-title">O Papel da Inteligência Artificial</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Transparência e Algoritmos</h3>
+                <p>As IAs moldam as informações que chegam até nós por meio de algoritmos de recomendação. Entender esse funcionamento evita a criação de "bolhas ideológicas".</p>
+            </div>
+            <div class="card">
+                <h3>Privacidade de Dados</h3>
+                <p>Ferramentas de IA se alimentam de grandes volumes de dados. A cidadania digital defende o controle e o consentimento sobre o uso de nossas informações pessoais.</p>
+            </div>
+            <div class="card">
+                <h3>Vieses Algorítmicos</h3>
+                <p>Os sistemas de IA podem reproduzir preconceitos humanos históricos se não forem fiscalizados. Exigir uma IA justa e equitativa faz parte dos novos direitos digitais.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 EducaDigital.ia - Criado para fins educativos e hospedado no GitHub.</p>
+    </footer>
+
+</body>
+</html>
